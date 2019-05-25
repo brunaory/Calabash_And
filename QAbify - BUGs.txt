@@ -1,0 +1,133 @@
+﻿Cenários mapeados para o Login:
+
+
+Realizar login
+Login negado
+
+
+Cenários mapeados para a solicitação de corrida:
+
+
+Verificar a estimativa lite
+Verificar a estimativa executive
+Comparar diferença lite versos executive
+Realizar estimativa sem informar token
+Solicitar corrida lite
+Solicitar corrida executive
+Validar token
+
+
+BUG`s encontrados:
+
+
+1.
+Pré-condição: 
+Realizar o login (usuário válido)
+Passos:
+Entrar na tela para configurar a corrida 
+
+
+Resultado encontrado:
+Por default vejo que o lite está pré selecionado. Para realizar a escolha do executive é necessário desmarcar o lite e por sua vez, selecionar o executive, bem como é possível selecionar os dois, ou mesmo  nenhum. 
+
+
+Resultado 1: Dado que selecione nenhum: a estimativa é dada considerando o carro tipo executive.
+
+
+Resultado 2: Dado que selecione os dois: a estimativa é dada considerando o carro tipo lite.
+
+
+Resultado esperado:
+Deveria ser possível selecionar ou um ou outro, ou seja, um tipo por vez, sendo que não deveria ser possível deixar esta opção em branco.
+
+
+Sugestão:
+Os componentes lite e executive são do tipo checkbox, o problema pode ser resolvido se o mesmo for substituído por um radiobutton.
+
+
+	2.
+Pré-condição: 
+Realizar o login (usuário válido)
+
+
+Passos:
+Entrar na tela para configurar a corrida 
+
+
+Resultado encontrado:
+É possível selecionar origem igual a destino.
+
+
+Resultado esperado:
+Origem e destino devem ser diferentes.
+	3.
+Pré-condição: 
+Acessar tela de login e tela de configuração
+
+
+Passos:
+Inserir valores e dar enter (no teclado)
+
+
+Resultado encontrado:
+Apresenta quebra de linha.
+
+
+Resultado esperado:
+Enter deveria esconder o teclado e avançar para a próxima etapa
+
+
+	4.
+Pré-condição: 
+Acessar tela de login.
+
+
+Passos:
+Inserir senha
+
+
+Resultado encontrado:
+A senha é exibida quando deveria estar ocultada.
+
+
+Resultado esperado:
+Senha  ocultada.
+	5.
+Pré-condição: 
+Acessar histórico de solicitação de corrida.
+
+
+Passos:
+Retornar para a tela de configuração;
+Alterar token (token inválido);
+Solicitar nova corrida.
+
+
+Resultado encontrado:
+A corrida é solicitada mesmo com token inválido.
+
+
+Resultado esperado:
+Exibir mensagem de token inválido.
+	
+
+
+
+Sugestões de melhoria:
+
+
+1.
+Pré-condição: 
+Realizar o login (usuário válido).
+
+
+Passos:
+solicitar mais de uma corrida.
+
+
+Resultado encontrado:
+O histórico de corrida está em ordem cronológica crescente, ou seja, a última corrida que pedi fica por último na lista.
+
+
+Resultado esperado:
+Exibir no topo da lista a última corrida requisitada para facilitar a visualização do usuário.
